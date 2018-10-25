@@ -1,0 +1,10 @@
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\bin\Debug\netcoreapp2.1\WebsocketServer.deps.json
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\bin\Debug\netcoreapp2.1\WebsocketServer.runtimeconfig.json
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\bin\Debug\netcoreapp2.1\WebsocketServer.runtimeconfig.dev.json
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\bin\Debug\netcoreapp2.1\WebsocketServer.dll
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\obj\Debug\netcoreapp2.1\WebsocketServer.csproj.CoreCompileInputs.cache
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\obj\Debug\netcoreapp2.1\WebsocketServer.AssemblyInfoInputs.cache
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\obj\Debug\netcoreapp2.1\WebsocketServer.AssemblyInfo.cs
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\bin\Debug\netcoreapp2.1\WebsocketServer.pdb
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\obj\Debug\netcoreapp2.1\WebsocketServer.dll
+C:\Users\c.veronesi\Desktop\WebSocket.NET\WebsocketServer\WebsocketServer\obj\Debug\netcoreapp2.1\WebsocketServer.pdb
