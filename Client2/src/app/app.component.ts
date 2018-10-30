@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConnectServiceService } from './connect-service.service'
 
 
@@ -8,18 +8,23 @@ import { ConnectServiceService } from './connect-service.service'
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit, OnDestroy {
   serverMsg: String = null;
   private message = "Hi server!";
   ioConnection: any;
 
-  constructor(private connService : ConnectServiceService) {
-  }
+  constructor(private connService : ConnectServiceService) {}
 
   ngOnInit(): void {
     this.initIoConnection();
   }
 
+  ngOnDestroy() {
+    //Unsubscribing
+    this.ioConnection.unsubscribe();
+  }
+
+  //Initializing socket and subscribing
   private initIoConnection(): void {
     this.connService.initSocket();
 
@@ -29,9 +34,9 @@ export class AppComponent implements OnInit  {
       });
   }
   
+  //Send message to server
   sendMsg() {
 		console.log('Sending message to server: ', this.message);
-    
     this.connService.send(this.message);
   }
 }

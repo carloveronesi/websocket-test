@@ -12,14 +12,17 @@ const URL = 'ws://localhost:8001/';
 export class ConnectServiceService {
   private socket;
 
+  //Initializing webSocket
   public initSocket(): void {
     this.socket = new ReconnectingWebSocket(URL);
   }
 
+  //Sending message
   public send(message: String): void {
     this.socket.send(message);
   }
 
+  //Receiving message
   public onMessage(): Observable <String> {
     return Observable.create(observer=>{  
       this.socket.onmessage = (evt) => { 
