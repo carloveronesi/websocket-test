@@ -31,6 +31,7 @@ export class AppComponent implements OnInit  {
   
   sendMsg() {
 		console.log('Sending message to server: ', this.message);
-		//this.socket.send(this.message);
-	}
+    
+    this.connService.send(this.message);
+  }
 }

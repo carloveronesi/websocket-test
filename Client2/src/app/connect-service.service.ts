@@ -1,13 +1,10 @@
 import {
   Injectable
 } from '@angular/core';
-import * as socketIo from 'socket.io-client';
 import {
   Observable
 } from 'rxjs/Observable';
-import {
-  Observer
-} from 'rxjs/Observer';
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
 const URL = 'ws://localhost:8001/';
 
@@ -16,17 +13,19 @@ export class ConnectServiceService {
   private socket;
 
   public initSocket(): void {
-    this.socket = socketIo(URL);
+    this.socket = new ReconnectingWebSocket(URL);
   }
 
   public send(message: String): void {
-    this.socket.emit('message', message);
+    this.socket.send(message);
   }
 
   public onMessage(): Observable < String > {
-    return new Observable < String > (observer => {
-      this.socket.on('message', (data: String) => observer.next(data));
-    });
+    return Observable.create(observer=>{  
+      this.socket.onmessage = (evt) => { 
+          observer.next(evt);
+      };
+    })
   }
 
   /*public onEvent(event: Event): Observable < any > {
