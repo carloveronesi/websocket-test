@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AppComponent } from './app.component';
 
-import { MessageServiceService } from './message-service.service';
 import { ConnectServiceService } from './connect-service.service';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { ConnectServiceService } from './connect-service.service';
     BrowserModule,
     FormsModule,
   ],
-  providers: [MessageServiceService, ConnectServiceService],
+  providers: [ConnectServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
