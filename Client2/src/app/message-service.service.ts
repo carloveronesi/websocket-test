@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class MessageServiceService {
   public messages: Subject<String>;
-
+/*
   constructor(connService : ConnectServiceService) {
     this.messages = <Subject<String>>connService
 			.ServiceConnection()
@@ -14,5 +14,6 @@ export class MessageServiceService {
 				return response.data;
 			});
   }
+  */
 
 }
