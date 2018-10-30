@@ -8,37 +8,21 @@ export class ConnectServiceService {
   URL = 'ws://localhost:8001/';
 
   constructor() {
-    
+    this.socket = new ReconnectingWebSocket(this.URL);
     this.connect()
   }
 
   connect() {
+    var prova = this.socket;
 
-    this.socket = new ReconnectingWebSocket(this.URL);
-      console.log(this.socket.URL);
-    
-
-    this.socket.onopen = function () {
+    prova.onopen = function () {
       console.log('Opened connection ');
-      this.socket.send("Prova");
+      prova.send("Prova");
     }
 
-    // When data is received
-    this.socket.onmessage = function (event) {
-      //Stampo messaggio ricevuto
-      console.log(event.data);
-    }
-
-    // A connection could not be made
-    this.socket.onerror = function (event) {
+    prova.onerror = function(event) {
       console.log("Errore");
       //console.log(event);
-    }
-
-    // A connection was closed
-    this.socket.onclose = function () { //Sarebbe: this.socket.onclose = function(code, reason) {
-      console.log("Connessione chiusa");
-      //console.log(code, reason);
     }
   }
   
