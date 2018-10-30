@@ -9,7 +9,7 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 
 export class AppComponent {
   URL = 'ws://localhost:8001/';
-  serverMsg: String = '';
+  serverMsg: String = null;
   private message = "Hi server!";
 
   socket = new ReconnectingWebSocket(this.URL);
@@ -26,7 +26,8 @@ export class AppComponent {
     // When data is received
     this.socket.onmessage = function(event) {
       this.serverMsg = event.data;
-      alert("arrivato");
+      //Stampo messaggio ricevuto
+      alert(event.data);
     }
     
     // A connection could not be made
