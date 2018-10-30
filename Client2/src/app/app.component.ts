@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import ReconnectingWebSocket from 'reconnecting-websocket';
+import { MessageServiceService } from './message-service.service'
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,15 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 })
 
 export class AppComponent {
-  URL = 'ws://localhost:8001/';
   serverMsg: String = null;
   private message = "Hi server!";
 
-  constructor() {}
+  constructor(msgService : MessageServiceService) {
+    msgService.messages.subscribe(msg => {			
+      this.serverMsg = msg;
+		});
+  }
   
-  
-
   sendMsg() {
 		console.log('Sending message to server: ', this.message);
 		//this.socket.send(this.message);

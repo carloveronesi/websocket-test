@@ -1,28 +1,32 @@
-import {
-  Injectable
-} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as Rx from 'rxjs/Rx';
 import ReconnectingWebSocket from 'reconnecting-websocket';
 
 @Injectable()
 export class ConnectServiceService {
-  socket = null;
+  socket;
+  URL = 'ws://localhost:8001/';
 
-  constructor(URL) {
-    this.socket = new ReconnectingWebSocket(URL);
+  constructor() {
+    
     this.connect()
   }
 
   connect() {
+
+    this.socket = new ReconnectingWebSocket(this.URL);
+      console.log(this.socket.URL);
+    
+
     this.socket.onopen = function () {
       console.log('Opened connection ');
+      this.socket.send("Prova");
     }
 
     // When data is received
     this.socket.onmessage = function (event) {
-      this.serverMsg = event.data;
       //Stampo messaggio ricevuto
-      alert(event.data);
+      console.log(event.data);
     }
 
     // A connection could not be made

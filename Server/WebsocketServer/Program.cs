@@ -26,6 +26,7 @@ namespace TestServer
 
 				//Receive action
 				c.OnReceive += async msg => {
+					await c.SendAsync("Hi!");
 					//Stampo su console
 					Console.WriteLine("Client message: \n" + msg);
 

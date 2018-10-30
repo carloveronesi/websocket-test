@@ -15,7 +15,7 @@ export class DialogoService {
 
 	constructor(wsService: WebsocketService) {
 		this.messages = <Subject<String>>wsService
-			.connect(URL).onErrorResumeNext(wsService.connect(URL))
+			.connect(URL)
 			.map((response: MessageEvent): String => {
 				return response.data;
 			});
