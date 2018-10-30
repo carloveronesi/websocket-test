@@ -1,6 +1,6 @@
-<input type="text" [value]="message"/>
+<input type="text" [(ngModel)]="message"/>
 <button (click)="sendMsg()">Send Message</button>
 
 <div [hidden]="!serverMsg">
-  Server response: <b>{{serverMsg}}</b>
+  Server response:  <b>{{serverMsg}}</b>
 </div>

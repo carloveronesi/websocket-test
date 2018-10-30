@@ -20,7 +20,7 @@ export class AppComponent {
   private message = "Hi server!";
 
   sendMsg() {
-		console.log('new message from client to websocket: ', this.message);
+		console.log('Sending message to server: ', this.message);
 		this.dialogoService.messages.next(this.message);
 	}
 

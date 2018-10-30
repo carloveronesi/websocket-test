@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as Rx from 'rxjs/Rx';
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
 @Injectable()
 export class WebsocketService {
@@ -16,7 +17,11 @@ export class WebsocketService {
   }
 
   private create(url): Rx.Subject < MessageEvent > {
-    let ws = new WebSocket(url);
+    let ws = new ReconnectingWebSocket(url);
+
+    ws.addEventListener('error', () => {
+      console.log("Error")
+    });
 
     let observable = Rx.Observable.create(
       (obs: Rx.Observer < MessageEvent > ) => {
