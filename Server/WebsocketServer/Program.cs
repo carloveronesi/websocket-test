@@ -33,13 +33,14 @@ namespace TestServer
 					await c.SendAsync("I've received the following message: " + msg);
 
 					//Chiudo connessione
-					await c.CloseAsync();
+					//await c.CloseAsync();
 				};
 
 				//Disconnect action
 				c.OnClose += (s, d) => Task.Run((Action)disconnected);
 			});
 
+			//Waiting for connection closing
 			AppExit.WaitFor(cts, t);
 		}
 

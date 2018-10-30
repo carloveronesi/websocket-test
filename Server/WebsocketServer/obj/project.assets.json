@@ -4901,11 +4901,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\WebsocketServer\\WebsocketServer\\WebsocketServer.csproj",
+      "projectUniqueName": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\websocket-test\\Server\\WebsocketServer\\WebsocketServer.csproj",
       "projectName": "WebsocketServer",
-      "projectPath": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\WebsocketServer\\WebsocketServer\\WebsocketServer.csproj",
+      "projectPath": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\websocket-test\\Server\\WebsocketServer\\WebsocketServer.csproj",
       "packagesPath": "C:\\Users\\c.veronesi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\WebsocketServer\\WebsocketServer\\obj\\",
+      "outputPath": "C:\\Users\\c.veronesi\\Desktop\\WebSocket.NET\\websocket-test\\Server\\WebsocketServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

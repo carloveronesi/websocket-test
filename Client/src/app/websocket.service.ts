@@ -1,6 +1,4 @@
-import {
-  Injectable
-} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as Rx from 'rxjs/Rx';
 
 @Injectable()
@@ -12,7 +10,7 @@ export class WebsocketService {
   public connect(url): Rx.Subject < MessageEvent > {
     if (!this.subject) {
       this.subject = this.create(url);
-      console.log("Successfully connected: " + url);
+      console.log("Connecting to: " + url);
     }
     return this.subject;
   }
