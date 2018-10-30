@@ -20,10 +20,10 @@ export class ConnectServiceService {
     this.socket.send(message);
   }
 
-  public onMessage(): Observable < String > {
+  public onMessage(): Observable <String> {
     return Observable.create(observer=>{  
       this.socket.onmessage = (evt) => { 
-          observer.next(evt);
+          observer.next(evt.data);
       };
     })
   }
